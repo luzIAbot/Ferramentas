@@ -1,0 +1,21 @@
+Paleta principal
+
+.color1 { #7375a5 }
+.color2 { #21a3a3 }
+.color3 { #13c8b5 }
+.color4 { #6cf3d5 }
+.color5 { #2b364a }
+
+Paleta secundária
+.color1 { #afe8d9 };
+.color2 { #c0eee2 };
+.color3 { #d1f4ec };
+.color4 { #e3f9f5 };
+.color5 { #f4ffff };
+
+Paleta terciaria
+.color1 { #f4f4f4 };
+.color2 { #cccccc };
+.color3 { #a4a4a4 };
+.color4 { #7b7b7b };
+.color5 { #535353 };

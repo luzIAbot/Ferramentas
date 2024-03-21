@@ -1,0 +1,15 @@
+[server]
+enableXsrfProtection = false
+enableCORS = false
+maxUploadSize = 10
+
+[client]
+showSidebarNavigation = false
+
+[theme]
+primaryColor="#252422"
+backgroundColor="#f1f1f1"
+secondaryBackgroundColor="#dc4307"
+textColor="#252422"
+font = "sans serif"
+

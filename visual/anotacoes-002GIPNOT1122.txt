@@ -1,0 +1,20 @@
+res = card(
+    title="Consumo total (kWh)",
+    text=f'{total_fechamento_aux:.0f} kWh',
+    styles={
+        "card": {
+            "width": "20%",
+            "height": "100px",
+            "box-shadow": "0 0 10px rgba(175, 232, 217, 0)",
+            "background-color": "#6cf3d5"
+        },
+        "title":{
+            "Arial":"serif",
+            "font-size": '1em'
+        },
+        "text": {
+            "Arial": "serif",
+            "font-size": '1em'
+        }
+    },
+    on_click=lambda: print(f'{total_fechamento_aux:.0f} kWh'))

@@ -1,0 +1,70 @@
+# Accordion-style menu for results
+with st.sidebar.expander("Menu Teste"):
+    btnDistrib = st.button('Distribuição de Clientes')
+    btnResultados = st.button("Resultados")
+    btnPot_Anual = st.button("Potência Anual")
+    btnCons_Diario = st.button("Consumo Diário (kWh)")
+    btnDem_Diario = st.button("Demanda Diária (kW)")
+    btnCompartivo = st.button("Comp. kWh")
+    btnCons_x_Temp = st.button("kWh x Temp. °C")
+    btnReset_Gateway = st.button("Reset de Gateway")
+    btnStatus_Auto = st.button("Status das Automações")
+    btnNivel_Func = st.button("Nível de Funcionamento")
+    btnRaioX = st.button("Raio-X das Lojas")
+
+
+st.info(f'Consumo total (kWh): {total_fechamento_aux:.0f} kWh')
+    st.info(f'Consumo evitado total (kWh): {total_consumo_evitado:.0f} kWh')
+    st.info(f'Economia: R$ {total_economia:.0f}')
+    st.info(f'Economia: {total_eco:.1f} %')
+
+# Bootstrap container with custom column widths
+    col2_1_width = 0.2  # Adjust the width ratio for the first column
+    col2_2_width = 1  # Adjust the width ratio for the second column
+    col2_1, col2_2 = st.columns([col2_1_width, col2_2_width])
+
+    with col2_1:
+        st.markdown("<img src='https://cdn-icons-png.flaticon.com/512/2511/2511629.png' width='100%'>", unsafe_allow_html=True)
+    with col2_2:
+        st.metric(label="Consumo Total (kWh)", value=round(total_fechamento_aux,0), delta=None)
+    
+    st.metric(label="Consumo Evitado Total (kWh)", value=round(total_consumo_evitado,0), delta=None)
+    
+    st.metric(label="Economia (R$)", value=round(total_economia,0), delta=None)
+    
+    st.metric(label="Economia (%)", value=round(total_eco,1), delta=None)
+
+
+
+ def columns(
+        self, spec: SpecType, *, gap: Optional[str] = "small"
+    ) -> List["DeltaGenerator"]:
+        """Insert containers laid out as side-by-side columns.
+
+        Inserts a number of multi-element containers laid out side-by-side and
+        returns a list of container objects.
+
+        To add elements to the returned containers, you can use "with" notation
+        (preferred) or just call methods directly on the returned object. See
+        examples below.
+
+        Columns can only be placed inside other columns up to one level of nesting.
+
+        .. warning::
+            Columns cannot be placed inside other columns in the sidebar. This is only possible in the main area of the app.
+
+        Parameters
+        ----------
+        spec : int or Iterable of numbers
+            Controls the number and width of columns to insert. Can be one of:
+
+            * An integer that specifies the number of columns. All columns have equal
+              width in this case.
+            * An Iterable of numbers (int or float) that specify the relative width of
+              each column. E.g. ``[0.7, 0.3]`` creates two columns where the first
+              one takes up 70% of the available with and the second one takes up 30%.
+              Or ``[1, 2, 3]`` creates three columns where the second one is two times
+              the width of the first one, and the third one is three times that width.
+
+        gap : "small", "medium", or "large"
+            The size of the gap between the columns. Defaults to "small".
